@@ -1,0 +1,21 @@
+<html>
+    <header>
+        <script>
+            function setValue() {
+
+                text = "{\"end_device_ids\":{\"device_id\":\"teststring2\",\"application_ids\":{\"application_id\":\"testtest987987\"},\"dev_addr\":\"260B40C4\"},\"correlation_ids\":[\"as:up:01GBZ51RH38B6F0D0PZ08EBA6H\",\"gs:conn:01GBTNQBGX0WGZDY4R3BVCHZPM\",\"gs:up:host:01GBTNQBH3S425QHNRN12PP52X\",\"gs:uplink:01GBZ51RAJ312HTZD5ZF96WSXM\",\"ns:uplink:01GBZ51RAK63MNCTKKQER8WVHJ\",\"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01GBZ51RAKFRS8MQZSH6E20B7S\",\"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01GBZ51RH2WE3PS0CNKHBAWWTC\"],\"received_at\":\"2022-09-02T13:08:09.891318993Z\",\"uplink_message\":{\"f_port\":1,\"f_cnt\":18,\"frm_payload\":\"SGVsbG9mcm9tRGV2aWNlMg==\",\"decoded_payload\":{\"myTestValue\":\"HellofromDevice2\"},\"rx_metadata\":[{\"gateway_ids\":{\"gateway_id\":\"nuremberg23\",\"eui\":\"B827EBFFFF6B90A3\"},\"timestamp\":1810874520,\"rssi\":-157,\"channel_rssi\":-157,\"location\":{\"latitude\":49.44022835049498,\"longitude\":11.074647645802804,\"altitude\":350,\"source\":\"SOURCE_REGISTRY\"},\"uplink_token\":\"ChkKFwoLbnVyZW1iZXJnMjMSCLgn6///a5CjEJiBv98GGgwIuYDImAYQtPjGxQIgwKOhhNrLIg==\",\"received_at\":\"2022-09-02T13:08:09.682736692Z\"}],\"settings\":{\"data_rate\":{\"lora\":{\"bandwidth\":125000,\"spreading_factor\":12}},\"coding_rate\":\"4/5\",\"frequency\":\"868100000\",\"timestamp\":1810874520},\"received_at\":\"2022-09-02T13:08:09.683813702Z\",\"consumed_airtime\":\"1.646592s\",\"version_ids\":{\"brand_id\":\"heltec\",\"model_id\":\"wifi-lora-32-class-a-abp\",\"hardware_version\":\"_unknown_hw_version_\",\"firmware_version\":\"1.0\",\"band_id\":\"EU_863_870\"},\"network_ids\":{\"net_id\":\"000013\",\"tenant_id\":\"ttn\",\"cluster_id\":\"eu1\",\"cluster_address\":\"eu1.cloud.thethings.network\"}}}";
+
+                encoded = url_encode(text);
+
+                document.body.children[0].children[0].value = encoded;
+
+            }
+        </script>
+    </header>
+    <body onLoad="setValue()">
+        <form method="POST" action="ttn.php">
+            <input name="value" type="text">
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>
